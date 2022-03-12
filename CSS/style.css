@@ -1,0 +1,302 @@
+:root {
+  --white: #FFFFFF;
+  --black: #212121;
+  --green: #5CCD64;
+  --primary: #FFC107;
+  --secondary: #0097A7;
+  --grey: #757575;
+  --background: #DFE9F3; 
+}
+
+/* Global Start */
+html{
+  font-size: 62.5%;
+  box-sizing: border-box; /* Box Model Hack */
+  /* scroll-snap-type: y mandatory; */
+}
+
+/* Scroll Snap Start */
+/* .services, .nav-bg,.form {
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+} */
+/* Scroll Snap End */
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body{
+  font-size: 16px; /* 1rem = 10px */
+  font-family: 'Krub', sans-serif;
+  background-image: linear-gradient(to top, var(--background) 0%, var(--white) 100%);
+}
+
+.container{
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.button {
+background-color: var(--secondary);
+color: var(--white);
+padding: 1rem 2rem;
+font-size: 1.8rem;
+text-decoration: none;
+font-weight: bold;
+text-transform: uppercase;
+border-radius: 1rem;
+width: 90%;
+text-align: center;
+border: none;
+}
+
+.button:hover {
+  background-color: var(--green);
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .button {
+    width: auto;
+  }
+}
+
+.shadow {
+  box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.32);
+  background-color: var(--white);
+  padding: 1.8rem;
+  border-radius: 0.6rem;
+}
+/* Global End */
+
+/* Fonts Start*/
+h1 {
+  font-size: 3.5rem;
+}
+h2 {
+  font-size: 2.5rem;
+}
+h3 {
+  font-size: 1.6rem;
+}
+h1, h2, h3 {
+  text-align: center;
+}
+/* Fonts End */
+
+/* Titles Start */
+.title  span{
+    font-size: 2rem;
+  }
+/* Titles End */
+
+/* Nav Bar Start */
+.nav-bg{
+    background-color: var(--secondary);
+  }
+
+.primary-navigation {
+    display: flex;
+    flex-direction: column;
+  }
+
+@media (min-width: 768px) {
+    .primary-navigation {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+.primary-navigation a{
+    padding: 1.2rem;
+    color: var(--white);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+.primary-navigation a:hover {
+    background-color: var(--primary);
+    color: var(--black);
+  }
+/* Nav Bar End */
+
+/* Hero Start */
+.hero {
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 380px;
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.contenido-hero {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.65);
+  width: 100%;
+  height: 100%;
+
+/*Alinear Horizontal y Verticalmente - Start*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+/*Alinear Horizontal y Verticalmente - End*/  
+}
+
+.contenido-hero h2, 
+.contenido-hero p {
+  color: var(--white);
+}
+/* Hero End */
+
+/* Servicios Start */
+@media (min-width: 768px) {
+  .services {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 5rem;
+  }
+}
+/* ---- */
+/*This syntax divides the space in fractions (fr) - Same result as putting three times 33.33*/
+
+/* Advanced Syntax */
+/*grid-template-columns: repeat(3, 1fr)*/
+/* ---- */
+
+.service {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alínea Verticalmente */
+
+}
+
+.service h3{
+
+  font-weight: bold;
+  color: var(--secondary);
+}
+
+.service .icons {
+  height: 15rem;
+  width: 15rem;
+  background-color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center; /* Centrado Horizontal */
+  align-items: center; /* Alínea Verticalmente */
+}
+
+.service p {
+  line-height: 1.5;
+  text-align: center;
+}
+/* Services End */
+
+/* Contact Start */
+
+.form {
+  background-color: var(--grey);
+  width: min(60rem, 100%);
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.form fieldset {
+  border: none;;
+}
+
+.form legend {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+@media (min-width: 768px ) {
+  .fields-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.8rem;
+    grid-template-rows: auto auto 15rem;
+  }
+  .field:nth-child(3), .field:nth-child(4) {
+    grid-column: 1 / 3;
+  }
+}
+
+
+.field {
+  margin-bottom: 1rem;
+}
+
+.field label {
+  display: block;
+  color: var(--white);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.text-inputs {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.field textarea {
+  margin-bottom: 1.5rem;
+  height: 14rem;
+}
+
+.send-button .button {
+  width: 100%;
+
+}
+@media (min-width: 768px) {
+  .send-button .button {
+    margin-top: 3rem;
+  }
+} 
+/* Utiliza lo mismo que tiene la clase Button pero le cambia el width cuando esté combinado con la clase send-button */
+
+/* Contact End */
+
+/* WhatsApp Button Start */
+.float {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50px;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px #999;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  transition: 0.23s;
+  }
+  .float:hover {
+  /* color: #25d366;
+  background-color: #fff; */
+  transform: scale(1.15);
+  transition: 0.23s;
+  }
+
+/* WhatsApp Button End */
+
+/* Footer Start */
+.footer {
+  text-align: center;
+}
+/* Footer End */
